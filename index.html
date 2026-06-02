@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<img src="logo.png" alt="Logo" width="80">
 <title>RM Science Academy Results Portal</title>
 
 <style>
@@ -172,9 +173,11 @@ function searchResult(){
 
     let val = document.getElementById("search").value.toLowerCase();
 
-    let s = students.find(x =>
-        x.name.toLowerCase() === val
-    );
+     let search = document.getElementById("search").value.trim().toLowerCase();
+
+let s = students.find(x =>
+    x.name.trim().toLowerCase().includes(search)
+);
 
     let card = document.getElementById("card");
 
